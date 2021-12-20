@@ -34,7 +34,7 @@ export function execute(cpu: Cpu): Cpu {
     }
 
     case 'executing-instruction': {
-      const is = cpu.memory[cpu.ip];
+      const is = cpu.is;
 
       if (!isOperation(is)) {
         return { ...cpu, state: 'crashed' };
