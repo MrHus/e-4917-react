@@ -12,12 +12,12 @@ export function useAutoplay(
       }
 
       // Do a step every second
-      const timeoutId = setInterval(() => {
+      const intervalId = setInterval(() => {
         dispatch({ type: 'step' });
       }, state.speed);
 
       return () => {
-        clearInterval(timeoutId);
+        clearInterval(intervalId);
       };
     },
     [dispatch, state.playing, state.speed, state.error]
